@@ -17,12 +17,12 @@
 ################################################################################
 
 PKG_NAME="dvb-firmware"
-PKG_VERSION="0.0.47"
+PKG_VERSION="CvH-1.2"
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="Free-to-use"
 PKG_SITE="https://github.com/OpenELEC/dvb-firmware"
-PKG_URL="http://www.mycvh.de/openelec/$PKG_NAME-$PKG_VERSION.tar.xz"
+PKG_URL="http://www.mycvh.de/openelec/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.xz"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_PRIORITY="optional"
 PKG_SECTION="firmware"
