@@ -55,8 +55,7 @@ for i in $BUILD/$1-*; do
         fi
       done
       # trigger unpack / full rebuild on any patch / script / etc.. change
-      # TODO: rewwork $PKG_DIR/scripts -> $PKG_DIR/filesystem/....
-      for file in $PKG_DIR/{patches,patches.upstream,scripts}/* ; do
+      for file in $PKG_DIR/{patches,scripts,config}/* $PKG_DIR/patches/$PKG_VERSION/*.patch $PROJECT_DIR/$PROJECT/patches/$PKG_NAME/*.patch; do
         if [ -f "$file" -a "$file" -nt "$i/.openelec-unpack" ]; then
           CLEAN_SOURCE=yes
           break
@@ -119,7 +118,7 @@ if [ "$(type -t pre_patch)" = "function" ]; then
   pre_patch
 fi
 
-if [ "$TARGET_ARCH" = "i386" -o "$TARGET_ARCH" = "x86_64" ]; then
+if [ "$TARGET_ARCH" = "x86_64" ]; then
   PATCH_ARCH="x86"
 else
   PATCH_ARCH="$TARGET_ARCH"
@@ -143,7 +142,11 @@ for i in $PKG_DIR/patches/$PKG_NAME-*.patch \
 
   if [ -f "$i" ]; then
     printf "%${BUILD_INDENT}c ${boldgreen}APPLY PATCH${endcolor} ${boldwhite}${PATCH_DESC}${endcolor}   $i\n" ' '>&$SILENT_OUT
-    cat $i | patch -d `echo "$PKG_BUILD" | cut -f1 -d\ ` -p1 >&$VERBOSE_OUT
+    if [ -n "$(grep -E '^GIT binary patch$' $i)" ]; then
+      cat $i | git apply --directory=`echo "$PKG_BUILD" | cut -f1 -d\ ` -p1 --verbose --whitespace=nowarn >&$VERBOSE_OUT
+    else
+      cat $i | patch -d `echo "$PKG_BUILD" | cut -f1 -d\ ` -p1 >&$VERBOSE_OUT
+    fi
   fi
 done
 
