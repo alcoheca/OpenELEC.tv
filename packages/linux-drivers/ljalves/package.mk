@@ -19,7 +19,7 @@
 ################################################################################
 
 PKG_NAME="ljalves"
-PKG_VERSION="2015-05-06"
+PKG_VERSION="2015-05-18"
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
