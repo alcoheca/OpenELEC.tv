@@ -19,7 +19,7 @@
 ################################################################################
 
 PKG_NAME="media_build"
-PKG_VERSION="e6f8eae"
+PKG_VERSION="0d0e21e"
 
 # choose "LATEST" or a date like "2014-12-01-e8bd888" for the driver package
 # chose from here http://linuxtv.org/downloads/drivers/
