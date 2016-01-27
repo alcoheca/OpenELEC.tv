@@ -29,6 +29,11 @@ echo "unpack sources... \n\n\n"
 
 echo "\n\n\n tbs-${PKG_VERSION}.tar.xz compress sources... \n\n\n"
   tar cvJf ../tbs-${PKG_VERSION}.tar.xz tbs-${PKG_VERSION}
+  
+  
+echo "remove x86... \n\n\n"
+  rm tbs-${PKG_VERSION}/v4l/*.o.x86
+  rm tbs-${PKG_VERSION}/v4l/*.o.x86_r3
 
 
 echo "\n\n\n tbs-dvbc-${PKG_VERSION}.tar.xz compress sources... \n\n\n"

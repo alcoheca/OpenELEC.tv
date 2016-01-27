@@ -33,6 +33,8 @@ echo "copying sources..."
 
 echo "cleaning sources..."
   rm -rf crazycat-$GIT_REV/.git
+  rm crazycat-$GIT_REV/v4l/*.o.x86
+  rm crazycat-$GIT_REV/v4l/*.o.x86_r3
 
 echo "packing sources..."
   tar cvJf crazycat-$GIT_REV.tar.xz crazycat-$GIT_REV
