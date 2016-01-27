@@ -1,0 +1,13 @@
+diff --git a/src/resources/lib/modules/system.py b/src/resources/lib/modules/system.py
+index 8f37928..af163be 100644
+--- a/src/resources/lib/modules/system.py
++++ b/src/resources/lib/modules/system.py
+@@ -147,7 +147,7 @@ def __init__(self, oeMain):
+                             },
+                         'UpdateNotify': {
+                             'name': 32365,
+-                            'value': '1',
++                            'value': '0',
+                             'action': 'set_value',
+                             'type': 'bool',
+                             'InfoText': 715,
