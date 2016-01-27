@@ -37,7 +37,7 @@ echo "cleaning media_build sources ..."
 # ljalves tbs drivers dl
 echo "getting ljalves sources ... !!! huge !!!"
   if [ ! -d linux_media.git ]; then
-    git clone --depth=1 https://github.com/crazycat69/linux_media.git -b latest ljalves-cc/media
+    git clone --depth=1 https://github.com/crazycat69/linux_media.git -b tbs5520 ljalves-cc/media
   fi
 
   cd ljalves-cc/media
