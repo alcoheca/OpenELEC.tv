@@ -17,7 +17,7 @@
 ################################################################################
 
 PKG_NAME="crazycat"
-PKG_VERSION="6c1d3b0"
+PKG_VERSION="c8714ba"
 PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
