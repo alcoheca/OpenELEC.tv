@@ -19,7 +19,7 @@
 
 echo "getting sources..."
   if [ ! -d linux-tbs-drivers.git ]; then
-    git clone https://bitbucket.org/CrazyCat/linux-tbs-drivers.git
+    git clone --depth=1 https://bitbucket.org/CrazyCat/linux-tbs-drivers.git
   fi
 
   cd linux-tbs-drivers
