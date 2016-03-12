@@ -26,7 +26,7 @@ rm -rf ljalves-cc-*
 # media_build dl
 echo "getting media_build sources ..."
   if [ ! -d media_build.git ]; then
-    git clone https://bitbucket.org/CrazyCat/media_build.git ljalves-cc/media_build
+    git clone --depth=1 https://bitbucket.org/CrazyCat/media_build.git ljalves-cc/media_build
   fi
 
 echo "cleaning media_build sources ..."
@@ -37,7 +37,7 @@ echo "cleaning media_build sources ..."
 # ljalves tbs drivers dl
 echo "getting ljalves sources ... !!! huge !!!"
   if [ ! -d linux_media.git ]; then
-    git clone --depth=1 https://github.com/crazycat69/linux_media.git -b si2168 ljalves-cc/media
+    git clone --depth=1 https://github.com/crazycat69/linux_media.git -b tbs5990 ljalves-cc/media
   fi
 
   cd ljalves-cc/media
