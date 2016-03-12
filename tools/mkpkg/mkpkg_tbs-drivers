@@ -4,7 +4,7 @@
 # see http://www.tbsdtv.com/download/ for rescent version
 # http://www.tbsdtv.com/download/document/common/tbs-linux-drivers_v150313.zip for example 150313
 
-PKG_VERSION="160126"
+PKG_VERSION="160216"
 
 
 echo "\n\n\n remove old sources \n\n\n"
