@@ -1,7 +1,5 @@
 #!/bin/sh
 ################################################################################
-#      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2012 Stephan Raue (stephan@openelec.tv)
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -20,24 +18,26 @@
 ################################################################################
 
 echo "getting sources..."
-  if [ ! -d linux-amlogic.git ]; then
-    git clone https://github.com/codesnake/linux linux-amlogic.git
+  if [ ! -d linux-tbs-drivers.git ]; then
+    git clone --depth=1 https://bitbucket.org/CrazyCat/linux-tbs-drivers.git
   fi
 
-  cd linux-amlogic.git
+  cd linux-tbs-drivers
     git pull
     GIT_REV=`git log -n1 --format=%h`
   cd ..
 
 echo "copying sources..."
-  rm -rf linux-amlogic-3.10-$GIT_REV
-  cp -R linux-amlogic.git linux-amlogic-3.10-$GIT_REV
+  rm -rf crazycat-$GIT_REV
+  mv linux-tbs-drivers crazycat-$GIT_REV
 
 echo "cleaning sources..."
-  rm -rf linux-amlogic-3.10-$GIT_REV/.git
+  rm -rf crazycat-$GIT_REV/.git
+  rm crazycat-$GIT_REV/v4l/*.o.x86
+  rm crazycat-$GIT_REV/v4l/*.o.x86_r3
 
 echo "packing sources..."
-  tar cvJf linux-amlogic-3.10-$GIT_REV.tar.xz linux-amlogic-3.10-$GIT_REV
+  tar cvJf crazycat-$GIT_REV.tar.xz crazycat-$GIT_REV
 
 echo "remove temporary sourcedir..."
-  rm -rf linux-amlogic-3.10-$GIT_REV
+  rm -rf crazycat-$GIT_REV
